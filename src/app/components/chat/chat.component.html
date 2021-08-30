@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col">
+    <h2>Chat</h2>
+    <hr>
+  </div>
+  <div class="col-12">
+    <section class="app-mensajes" id="app-mensajes">
+      <aside class="text-end" *ngFor="let chat of _chatService.chats">
+        <span class="badge rounded-pill bg-primary">Fernando</span>
+        <p>{{ chat.mensaje }}</p>
+      </aside>
+      <!-- <aside class="text-start">
+        <span class="badge rounded-pill bg-success">Maria</span>
+        <p>Este es un mensaje de chat</p>
+      </aside> -->
+    </section>
+    <input type="text" name="mensaje" [(ngModel)]="mensaje" class="form-control" (keyup.enter)="enviarMensaje()"
+      placeholder="Enviar mensaje" />
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "filechat-a1132": {
+      "hosting": {
+        "fileChat": [
+          "filechat-a1132"
+        ]
+      }
+    }
+  }
+}
