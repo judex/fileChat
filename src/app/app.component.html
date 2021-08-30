@@ -4,9 +4,16 @@
   </li>
 </ul> -->
 
+
 <div class="container mt-4">
   <h1>FireChat</h1>
-  <div class="chat-window">
+  <div class="col-12 text-end" *ngIf="chatService.usuario.uid">
+    <button type="button" class="btn btn-danger" (click)="chatService.logout()">Salir</button>
+  </div>
+
+  <app-login *ngIf="!chatService.usuario.uid"></app-login>
+
+  <div class="chat-window" *ngIf="chatService.usuario.uid">
     <app-chat></app-chat>
   </div>
 </div>

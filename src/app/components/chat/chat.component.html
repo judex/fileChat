@@ -5,8 +5,11 @@
   </div>
   <div class="col-12">
     <section class="app-mensajes" id="app-mensajes">
-      <aside class="text-end" *ngFor="let chat of _chatService.chats">
-        <span class="badge rounded-pill bg-primary">Fernando</span>
+      <aside [ngClass]="{'text-end': _chatService.usuario.uid == chat.uid}"  *ngFor="let chat of _chatService.chats">
+        <span class="badge rounded-pill"
+        [ngClass]="{'bg-primary': _chatService.usuario.uid == chat.uid,
+                    'bg-success': _chatService.usuario.uid != chat.uid}"
+        >{{ chat.nombre }}</span>
         <p>{{ chat.mensaje }}</p>
       </aside>
       <!-- <aside class="text-start">
